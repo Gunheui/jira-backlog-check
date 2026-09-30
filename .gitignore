@@ -1,0 +1,17 @@
+# 비밀키
+.env
+
+# 비공개 문서와 원본 데이터
+private/
+
+# 로컬 작업 규칙
+CLAUDE.md
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+dist/
+
+# 도구 실행 결과(회의록 내용이 들어 있음)
+runs/

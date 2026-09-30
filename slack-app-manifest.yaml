@@ -1,0 +1,21 @@
+# Slack 앱 설정 파일. https://api.slack.com/apps → Create New App → From a manifest 에 붙여 넣으면
+# 알림용 봇이 만들어진다. 설치한 뒤 OAuth & Permissions의 Bot User OAuth Token(xoxb-)을 .env의 SLACK_BOT_TOKEN에 넣는다.
+#
+# 권한은 메시지 쓰기뿐이다. 이 도구에서 Slack은 알림만 맡고(검토 문서 준비, 반영 결과, 검사 오류, 실행 실패),
+# 결정은 Confluence 검토 문서에서 한다. chat:write.public은 봇을 초대하지 않은 공개 채널에도 쓰기 위한 것이다.
+display_information:
+  name: PM Agent
+  description: 회의록 이슈 검토 문서와 Jira 반영 결과를 알립니다
+features:
+  bot_user:
+    display_name: PM Agent
+    always_online: false
+oauth_config:
+  scopes:
+    bot:
+      - chat:write
+      - chat:write.public
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
